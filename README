@@ -1,2 +1,2 @@
-npm i express
+npm i express express-handlebars body-parser express-session cookie-parser
 npm i -D nodemon
