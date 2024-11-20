@@ -33,21 +33,31 @@ app.use(session({
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res)=>{
+
+    res.render('pages/home',{
+        layout: 'home-layout',
+        title: 'Welcome to STADVDB MCO2'
+    });
     console.log(req.session)
     console.log(req.session.id)
-    res.status(201).send({msg:"Hello!"})
 
 })
 
-app.get('/', function(req, resp){
+app.get('/create', function(req, resp){
 
 
-  });
-app.get('/api/users', (req, res)=>{
+});
+
+app.get('/read', (req, res)=>{
+    response.status(201).send({msg:"Hello!"})
+
+})
+app.get('/update', (req, res)=>{
     response.status(201).send({msg:"Hello!"})
 
 })
 
-app.listen(PORT, ()=>{
-    console.log("Running on PORT 3000")
+app.get('/delete', (req, res)=>{
+    response.status(201).send({msg:"Hello!"})
+
 })
