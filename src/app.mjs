@@ -18,7 +18,7 @@ app.engine('hbs', handlebars.engine({
 app.use(express.static('public'));
 
 // Over head template for using sessions
-app.use(cookieParser("Hello world"))
+app.use(cookieParser("Hello world"));
 app.use(session({
     secret: "pjagbuya1234",
     saveUninitialized: false,
@@ -26,7 +26,7 @@ app.use(session({
     cooke:{
         maxAge: 60000 * 60 
     }
-}))
+}));
 
 
 // Code Proper
@@ -41,7 +41,7 @@ app.get('/', (req, res)=>{
     console.log(req.session)
     console.log(req.session.id)
 
-})
+});
 
 app.get('/create', function(req, resp){
 
@@ -51,13 +51,17 @@ app.get('/create', function(req, resp){
 app.get('/read', (req, res)=>{
     response.status(201).send({msg:"Hello!"})
 
-})
+});
 app.get('/update', (req, res)=>{
     response.status(201).send({msg:"Hello!"})
 
-})
+});
 
 app.get('/delete', (req, res)=>{
     response.status(201).send({msg:"Hello!"})
 
-})
+});
+
+app.listen(PORT, () => {
+	console.log(`Server running at http://localhost:${PORT}`);
+});
