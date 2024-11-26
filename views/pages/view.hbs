@@ -1,0 +1,27 @@
+<section class="view-section">
+  <div class="view-container">
+    <div class="view-div">
+      <h1 class="header-custom1">Games List</h1>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Game Title</th>
+            <th>Release Year</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each games}}
+          <tr>
+            <td>{{this.title}}</td>
+            <td>{{this.year}}</td>
+            <td>
+              <a href="/view/{{this.id}}" class="custom-link">View Details</a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
