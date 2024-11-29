@@ -4,12 +4,32 @@ import cookieParser from "cookie-parser";
 import session from "express-session";
 import { fileURLToPath } from "url";
 
+
+//Routes
+import read from './routes/read/read.mjs';
+import update from './routes/update/update.mjs';
+import deleteFunc from './routes/delete/delete.mjs';
+
+
 const app = express();
+const PORT = "8080"
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Overhead template for using hbs
 import handlebars from "express-handlebars";
+
+
+
+// app attaches to the routes
+app.use('/read', read);
+
+app.use('/update', update);
+
+app.use('/delete', deleteFunc);
+
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "hbs");
@@ -46,36 +66,47 @@ app.get("/", (req, res) => {
     layout: "home-layout",
     title: "Welcome to STADVDB MCO2",
   });
-});
 
-app.get("/register", (req, res) => {
-  res.render("pages/register", {
+
+});
+app.post("/", (req, res) =>{
+  
+  res.redirect(`/${req.body.username}`)
+});
+app.get("/:id", (req, res) => {
+  const id = req.params.id;
+  res.render("pages/home_success", {
     layout: "home-layout",
-    title: "Register",
+    title: `Welcome ${id}`,
+    username: id
   });
 });
 
-app.post("/register", (req, res) => {
-  const { username, password } = req.body;
-  console.log("User registered:", { username, password });
-  res.redirect("/login");
-});
 
-app.get("/login", (req, res) => {
-  res.render("pages/login", {
+app.get("/:id", (req, res) => {
+  res.render("pages/home_success", {
     layout: "home-layout",
-    title: "Login",
+    title: `Welcome ${req.body.username}`,
+    username: req.params.id
   });
 });
 
-app.post("/login", (req, res) => {
-  const { username, password } = req.body;
-  console.log("User login attempt:", { username, password });
-  res.redirect("/");
+
+
+// Add error handling to app.listen
+const server = app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
+
+// Catch errors like EADDRINUSE
+server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+        console.error(`Port ${PORT} is already in use. Please free the port or use a different one.`);
+    } else {
+        console.error('An unexpected error occurred:', err);
+    }
+});
+
 
 export default app;
 
-app.listen(PORT, () => {
-	console.log(`Server running at http://localhost:${PORT}`);
-});

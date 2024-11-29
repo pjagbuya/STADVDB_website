@@ -1,7 +1,8 @@
 
 <!--Welcome Section-->
+<section class="flex-column">
 <section class= "main-welcome-section">
-  <div class="welcome-container">
+  <div class="welcome-container ">
     <div class="welcome-div">
       <span class="header-custom1">Welcome To
         <span class="animolab-header">STADVDB MCO2
@@ -14,21 +15,26 @@
 
 
 <!--Call to Action Section-->
-<section class= "call-to-action-section">
+<section class= "call-to-action-section ">
   <div class="call-to-action-container">
-    <div class="call-to-action-div">
-      <div class="signup-icon">
-        <i class="fa-solid fa-user fa-5x custom-color2"></i>
-      </div>
-      <div class="login-icon">
-        <i class="fa-solid fa-right-to-bracket fa-5x custom-color2"></i>
-      </div>
+    <div class="call-to-action-div d-flex justify-content-center">
+
       <p class="custom-color2">
-        Please Register a username<br>
+        <form class="flex-column" action="/" method="POST">
+
+        Type a username<br>
         Click <a class="call-link no-decor custom-color3" href="/register">Register</a> for a new Account
         <br>
-        Click <a class="call-link no-decor custom-color3" href="/login">Login</a> if you are already Registered
+        <input name="username" class ="flex" type="text">
+        <button class="flex custom-button-1">Register</button>
+
+        </form>
+
+       
       </p>
     </div>
   </div>
 </section>
+
+</section>
+
