@@ -1,0 +1,15 @@
+label{
+    font-family: "Montserrat";
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ADBC9F;
+}
+
+.call-to-action-div
+{
+
+  min-height: 300px;
+  min-width: 300px;
+  height: auto;
+  width: auto;
+}

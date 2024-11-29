@@ -37,7 +37,7 @@
 
 
       <li class="nav-item">
-        <a class="nav-link " href="/" target="_self">
+        <a class="nav-link " href="/{{username}}" target="_self">
           <div class="text-centered text-custom1 custom-color1">
             Home
           </div>
@@ -45,20 +45,26 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/login">
+        <a class="nav-link" href="/read/{{username}}">
           <div class="text-centered text-custom1 custom-color1">
-            View
+            Read
           </div>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/register">
+        <a class="nav-link" href="/update/{{username}}">
           <div class="text-centered text-custom1 custom-color1 ">
             Update
           </div>
         </a>
       </li>
-
+      <li class="nav-item">
+        <a class="nav-link" href="/delete/{{username}}">
+          <div class="text-centered text-custom1 custom-color1 ">
+            Delete
+          </div>
+        </a>
+      </li>
     </ul>
   </div>
 

@@ -6,7 +6,7 @@ npm i -D nodemon
 ```
 
 ## Run the application
-```cd``` to ```src``` folder then run the command:
-```
-nodemon app.mjs
-```
+
+
+npm run start:dev
+
