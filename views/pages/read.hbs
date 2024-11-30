@@ -1,37 +1,31 @@
-
-<!--Welcome Section-->
 <div class="d-flex flex-row">
-
-    <section class="flex-column">
-
-
-        <!--Call to Action Section-->
-        <section class= "call-to-action-section ">
-
-            <div class="call-to-action-div flex-column">
-                <form action="/read/{{username}}" method="POST">
-                    <select id="input_field_read" name="input_field_read">
-                        <option value="volvo">all</option>
-    
-                    </select>
-                    <button id="read" name="read" class="d-flex custom-button-1">Read Again</button>
-
-            
-                </form>
-
-
-
-            </div>
-
-        </section>
-
+  <section class="flex-column">
+    <section class="call-to-action-section">
+      <div class="call-to-action-div flex-column">
+        <h1 class="custom-header">Game Data</h1>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>App ID</th>
+              <th>Name</th>
+              <th>Release Date</th>
+              <th>Price</th>
+              <th>Developers</th>
+            </tr>
+          </thead>
+            <tbody>
+              {{#each games}}
+              <tr>
+                <td>{{this.appId}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.releaseDate}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.developers}}</td>
+              </tr>
+              {{/each}}
+            </tbody>
+        </table>
+      </div>
     </section>
-    <div class="call-to-action-div flex-column">
-        <section name="table-section">
-            
-        </section> 
-
-    </div>
+  </section>
 </div>
-
-
