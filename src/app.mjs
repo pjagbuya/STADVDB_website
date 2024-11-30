@@ -9,7 +9,7 @@ import { fileURLToPath } from "url";
 import read from './routes/read/read.mjs';
 import update from './routes/update/update.mjs';
 import deleteFunc from './routes/delete/delete.mjs';
-
+import create from './routes/create/create.mjs';
 
 const app = express();
 app.use(express.json());
@@ -30,7 +30,7 @@ app.use('/update', update);
 
 app.use('/delete', deleteFunc);
 
-
+app.use('/create', create);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -44,7 +44,7 @@ app.engine(
 
 // Correctly set the views directory path to be outside `src`
 const viewsPath = path.resolve(__dirname, "../views");
-console.log("Views Path: ", viewsPath);
+
 app.set("views", viewsPath);
 
 app.use(express.static("public"));

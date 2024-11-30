@@ -1,0 +1,33 @@
+<script id="table-display-template" type="text/x-handlebars-template" >
+
+
+<h1 class="fw-bolder custom-header text-light">Game Data</h1>
+ <table  border="1">
+          <thead class="table-result-update">
+            <tr>
+              <th class="thead-c"> </th>
+              <th class="thead-c">App ID</th>
+              <th class="thead-c">Name</th>
+              <th class="thead-c">Release Date</th>
+              <th class="thead-c">Price</th>
+              <th class="thead-c">Developers</th>
+
+            </tr>
+          </thead>
+            <tbody>
+              \{{#each games}}
+              <tr>
+                <td class="tc _\{{this.appId}}"><button data-id="\{{this.appId}}" class="select" name="select"> Select</button></td>
+                <td class="tc">\{{this.appId}}</td>
+                <td  class="tc">\{{this.name}}</td>
+                <td  class="tc">\{{this.releaseDate}}</td>
+                <td  class="tc ">\{{this.price}}</td>
+                <td  class="tc ">\{{this.developers}}</td>
+
+            </tr>
+            \{{/each}}
+           </tbody>
+  </table>
+
+
+</script>

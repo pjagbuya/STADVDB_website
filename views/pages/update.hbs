@@ -1,17 +1,26 @@
 <div class="d-flex flex-row">
 <!--Welcome Section-->
-<section class="flex-column">
+<section class="flex-column limited-view">
 
 
     <!--Call to Action Section-->
-    <section class= "call-to-action-section ">
+    <section class= "call-to-action-section justify-content-center">
 
-        <div class="call-to-action-div flex-column">
+        <div class="call-to-action-div flex-column custom-div2">
+            <div class="d-flex flex-column">
+
+            <select class="mx-2" id="input_field_update" name="input_field_update">
+            <option selected="selected" value="Name">Name</option>
+            <option value="Release Date">Release Date</option>
+
+            </select>
+            <input type="text" name="search-txt" id="search-txt" class="mx-2">
+            <button id="search" >Search</button>
+
+            </div>
+
             <form action="/update/{{username}}" method="POST">
-                <select id="input_field_update" name="input_field_update">
-                <option value="volvo">lorem</option>
-  
-                </select>
+
                 <div class="field-section">
                     <label for="appid">
                         App ID:
@@ -30,14 +39,14 @@
                     <label for="date">
                         Release Date 
                     </label>
-                    <input type="date" id="name" name="name" value="2018-07-22">
+                    <input type="text" id="date" name="" value="">
                 </div>
 
                 <div class="field-section">
                     <label for="price">
                         Price
                     </label>
-                    <input type="text" name="price" id="id">
+                    <input type="text" name="price" id="price">
                 </div>
 
                 <div class="field-section">
@@ -50,7 +59,7 @@
 
                 
                 <button id="update" name="update" class="d-flex custom-button-1">Update</button>
-                <button id="create" name="create" class="d-flex custom-button-1">Create</button>
+                
 
         
             </form>
@@ -63,9 +72,35 @@
 
 </section>
 
-<div class="call-to-action-div flex-column">
-    <section name="table-section">
-        
+<div class="limited-view align-items-center">
+    <section id="sql-results" class="call-to-action-div flex-column flip-back custom-div " >
+        <h1 class="fw-bolder custom-header text-light">Game Data</h1>
+        <table  border="1">
+          <thead class="table-result-update">
+            <tr>
+              <th class="thead-c"> </th>
+              <th class="thead-c">App ID</th>
+              <th class="thead-c">Name</th>
+              <th class="thead-c">Release Date</th>
+              <th class="thead-c">Price</th>
+              <th class="thead-c">Developers</th>
+
+            </tr>
+          </thead>
+            <tbody>
+              {{#each games}}
+              <tr>
+                <td class="tc _{{this.appId}}"><button data-id="{{this.appId}}" class="select" name="select"> Select</button></td>
+                <td class="tc">{{this.appId}}</td>
+                <td  class="tc">{{this.name}}</td>
+                <td  class="tc">{{this.releaseDate}}</td>
+                <td  class="tc ">{{this.price}}</td>
+                <td  class="tc ">{{this.developers}}</td>
+
+              </tr>
+              {{/each}}
+            </tbody>
+        </table>
     </section> 
 
 </div>

@@ -4,6 +4,11 @@ label{
     font-weight: bold;
     color: #ADBC9F;
 }
+button:click{
+  background-color: black;
+  color: white;
+}
+
 
 .call-to-action-div
 {
@@ -12,4 +17,87 @@ label{
   min-width: 300px;
   height: auto;
   width: auto;
+}
+
+.t-head-text
+{
+
+  min-height: 300px;
+  min-width: 300px;
+  height: auto;
+  width: auto;
+}
+table{
+  
+  border: 5px solid #ADBC9F;
+  padding: 30px;
+  text-align:center;
+  color:white;
+
+}
+
+.thead-c{
+  
+  border: 5px solid #ADBC9F;
+  padding: 5px;
+  text-align:center;
+  color:white;
+
+}
+.tc{
+  border: 5px solid #ADBC9F;
+  padding: 10px;
+
+}
+
+
+.limited-view{
+
+}
+thead {
+  position: sticky;
+  background-color: #A8CD89;
+  color:black;
+  top: 0;
+  
+}
+.flip-back{
+
+  overflow-x: auto;
+  
+}
+
+
+.custom-div{
+
+  max-height: 600px;
+  align-items: start;
+  width: 1000px;
+  max-width: 80%;
+  margin-right: 40%;
+}
+
+.flowable-sticky-update-fields{
+
+  
+  width: 800px;
+
+}
+
+.padding-0{
+  padding:0;
+
+}
+
+.custom-div2{
+
+  max-height: 600px;
+  align-items: start;
+  max-width: none;
+  width: 700px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  margin-left: 40%;
+  margin-top: 0;
 }
