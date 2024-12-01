@@ -1,57 +1,43 @@
 <div class="d-flex flex-row">
-<!--Welcome Section-->
-    <section class="flex-column">
-
-
-        <!--Call to Action Section-->
-        <section class= "call-to-action-section ">
-
-            <div class="call-to-action-div flex-column">
-                <p>Enter App ID to delete: </p>
-                <form action="/delete/{{username}}" method="POST" id="delete-form">
-                    <input type="number" id="appID" name="appID" required>
-                    <button type="submit" id="delete" name="delete" class="d-flex custom-button-1">Delete</button>
-
-            
-                </form>
-
-
-
-            </div>
-
-        </section>
-
+  <!-- Welcome Section -->
+  <section class="flex-column">
+    <!-- Call to Action Section -->
+    <section class="call-to-action-section">
+      <div class="call-to-action-div flex-column">
+        <p>Enter App ID to delete: </p>
+        <form action="/delete/{{username}}" method="POST" id="delete-form">
+          <input type="number" id="appID" name="appID" required>
+          <button type="submit" id="delete" name="delete" class="d-flex custom-button-1">Delete</button>
+        </form>
+      </div>
     </section>
+  </section>
 
-    <div class="call-to-action-div flex-column">
-        <section name="table-section">
-            <table>
-                <thead>
-                    <tr>
-                        <th>App ID</th>
-                        <th>Name</th>
-                        <th>Release Date</th>
-                        <th>Price</th>
-                        <th>Developers</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each data}}
-                    <tr>
-                        <td>{{this.appid}}</td>
-                        <td>{{this.name}}</td>
-                        <td>{{this.release_date}}</td>
-                        <td>{{this.price}}</td>
-                        <td>{{this.developers}}</td>
-                    </tr>
-                    {{/each}}
-                    
-                </tbody>
-            </table>
-            
-        </section> 
-
-    </div>
-
-
+  <!-- Table Section -->
+  <div class="call-to-action-div flex-column">
+    <section name="table-section">
+      <table>
+        <thead>
+          <tr>
+            <th class="thead-c">App ID</th>
+            <th class="thead-c">Name</th>
+            <th class="thead-c">Release Date</th>
+            <th class="thead-c">Price</th>
+            <th class="thead-c">Developers</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each data}}
+          <tr>
+            <td class="tc">{{this.appId}}</td> <!-- Match field name with read.hbs -->
+            <td class="tc">{{this.name}}</td>
+            <td class="tc">{{this.releaseDate}}</td> <!-- Match field name with read.hbs -->
+            <td class="tc">{{this.price}}</td>
+            <td class="tc">{{this.developers}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </section>
+  </div>
 </div>

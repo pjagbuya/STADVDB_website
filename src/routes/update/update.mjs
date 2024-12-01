@@ -1,7 +1,7 @@
 import Handlebars from 'handlebars';
 import express from "express";
 import handlebars from 'handlebars';  // Import handlebars
-import db from "../../db.mjs";
+import { db1, db2, db3 } from "../../databases.mjs";  // Import the databases
 import  { getColumnByWord, isFloat, isNumber }from '../../helpers.mjs';
 import { game } from "../../tables.mjs";
 import { sql, eq, gte, lte, between } from "drizzle-orm"
@@ -10,6 +10,18 @@ const router = express.Router();
 
 router.get("/:id", async (req, res) => {
     const id = req.params.id
+    const selectedNode = req.session.node; // Get the selected node from session
+    // Dynamically select the database based on the selected node
+    let db;
+    if (selectedNode === "Node1") {
+      db = db1;
+    } else if (selectedNode === "Node2") {
+      db = db2;
+    } else if (selectedNode === "Node3") {
+      db = db3;
+    } else {
+      db = db2;  // Default to db2 if no node is selected
+    }
 
     try{
       const gameList = await db.select().from(game).limit(100).execute();
@@ -35,6 +47,19 @@ router.get("/:id", async (req, res) => {
 
 router.post("/search", async (req, res) =>{
     const id = req.params.id;
+    const selectedNode = req.session.node; // Get the selected node from session
+    // Dynamically select the database based on the selected node
+    let db;
+    if (selectedNode === "Node1") {
+      db = db1;
+    } else if (selectedNode === "Node2") {
+      db = db2;
+    } else if (selectedNode === "Node3") {
+      db = db3;
+    } else {
+      db = db2;  // Default to db2 if no node is selected
+    }
+  
     var gameList;
     var num;
     console.log(req.body)

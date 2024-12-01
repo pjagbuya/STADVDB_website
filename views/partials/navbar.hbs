@@ -1,21 +1,47 @@
+<nav class="index-navbar navbar navbar-expand-lg bg-body-tertiary" style="z-index: 1050;">
+  <!-- <i class="custom-color1 animo-icon fa-solid fa-calendar-days fa-5x"></i> -->
 
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<nav class="index-navbar navbar navbar-expand-lg bg-body-tertiary fixed-top">
-  <i class="custom-color1 animo-icon fa-solid fa-calendar-days fa-5x"></i>
-
-  <div class="animo-text">
-    <a href="/" class ="no-decor" target="_self">
-    <span class="navbar-text header-custom2">
-      <div class="custom-color2">
-        Animo STADVDB
-      </div>
-    </span>
-    </a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/{{username}}" target="_self">
+          <div class="text-centered text-custom1 custom-color1">
+            Home
+          </div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/read/{{username}}">
+          <div class="text-centered text-custom1 custom-color1">
+            Read
+          </div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/update/{{username}}">
+          <div class="text-centered text-custom1 custom-color1">
+            Update
+          </div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/delete/{{username}}">
+          <div class="text-centered text-custom1 custom-color1">
+            Delete
+          </div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/create/{{username}}">
+          <div class="text-centered text-custom1 custom-color1">
+            Create
+          </div>
+        </a>
+      </li>
+    </ul>
   </div>
-
-
-
-
-
-
 </nav>

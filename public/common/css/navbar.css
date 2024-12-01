@@ -1,133 +1,75 @@
-
-
-a:link {
-    color: black;
-    text-decoration: none;
-  }
-a:visited {
-    color: black;
-    text-decoration: none;
+/* Navbar styles */
+.index-navbar {
+  background-color: #12372A;
+  /* Remove fixed position so it scrolls with the page */
+  position: relative;  /* Default position */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;  /* Keep navbar on top of other content */
+  width: 100%;  /* Ensure full width */
 }
-a:active {
-    color: black;
-    text-decoration: underline;
+
+/* Adjust the body to prevent overlap with the navbar */
+body {
+  padding-top: 50px; /* Adjust the padding to create space for the navbar */
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
-.no-decor{
-    text-decoration:none
 
+/* Ensure the search form is not blocked by the navbar */
+.call-to-action-section {
+  margin-top: 20px; /* Add some margin to ensure the search form is below the navbar */
 }
-    .custom-default-font1{
-      font-family: "Montserrat";
-      font-size: 1rem;
-    }
-  
-    .custom-color1
-    {
-      color: #FBFADA;
-    }
-    .index-navbar{
-      background-color: #12372A;
-  
-    }
-    .custom-color2
-    {
-      color: #ADBC9F;
-    }
-  
-    .header-custom2
-    {
-      font-size: 2.5rem;
-      font-family: "Pacifico";
-      font-weight: 400;
-    }
-    .animo-text{
-      margin-left: 10px;
-      margin-right: 30px;
-    }
-    .animo-icon{
-      margin-left: 10px
-    }
-  
-    .pic-and-mail{
-      position: relative;
-    }
-    .mail-icon-section{
-      position: absolute;
-      top: 60px;
-      left: 60px;
-      color: #FBFADA;
-      z-index: 2;
-    }
-    .circle-icon{
-      color: red;
-      position: relative;
-      bottom: 45px;
-      left: 25px;
-      z-index: 3;
-    }
-  
-    .mail-icon-section:hover{
-      color: #CDFADB;
-      cursor: pointer;
-      transform: scale(1.2);
-    }
-  
-    .custom-color3{
-      color: #CDFADB;
-    }
-  
-  
-    body{
-      padding-top: 180px;
-    }
-    .search-bar-input{
-  
-      width: 400px !important;
-      height: 40px !important;
-  
-    }
 
-  
-    .animo-text:hover
-    {
-  
-      animation: slightly-big 1s ease-in-out infinite alternate;
-  
-    }
-  
-    body {
-      font-family: 'Arial', sans-serif;
-      display: flex;
-    }
-  
+/* Game Data Table Section */
+.call-to-action-div {
+  margin-top: 20px; /* Ensure the content isn't blocked by the navbar */
+}
 
-  
-    .show {
-  
-      left: 0px;
-    }
-    .icon-section{
-      margin-right: 20px;
-    }
+/* Flexbox adjustments */
+.d-flex {
+  display: flex;
+}
 
+.flex-row {
+  flex-direction: row;
+}
 
-  
-    .toggle-sidebar-custom1:hover{
-      background-color: white;
-    }
-    .fa-bars{
-      color: #FBFADA;
-    }
-    .close-btns{
-      transform: scale(0.8);
-    }
-    @keyframes slightly-big{
-      from{
-        transform: scale(1);
-      }
-      to{
-        transform: scale(1.2);
-  
-      }
-    }
-  
+.flex-column {
+  flex-direction: column;
+}
+
+/* Ensure other button elements are properly spaced and clickable */
+button {
+  background-color: #12372A;
+  color: #FBFADA;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ADBC9F;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #12372A;
+  color: #FBFADA;
+}
+
+td {
+  background-color: #ADBC9F;
+}

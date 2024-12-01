@@ -1,14 +1,45 @@
-version: '3'
+version: '3.8'
+
 services:
-  web:
-    build:
+  central-node:
+    image: mysql:latest
+    container_name: central-node
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: central_db
     ports:
-    - "8080:8080"
-    db:
-      image: "mysql"
-      environment:
-        MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
-      volumes:
-        - db-data:/foo
-volumes:
-  db-data:
+      - "3309:3306"
+    volumes:
+      - ./init-scripts/central-node-init.sql:/docker-entrypoint-initdb.d/initial_data.sql
+    networks:
+      - app-network
+
+  node-2:
+    image: mysql:latest
+    container_name: node-2
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: games_pre_2020
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./init-scripts/node-2-init.sql:/docker-entrypoint-initdb.d/initial_data.sql
+    networks:
+      - app-network
+
+  node-3:
+    image: mysql:latest
+    container_name: node-3
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: games_post_2020
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./init-scripts/node-3-init.sql:/docker-entrypoint-initdb.d/initial_data.sql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

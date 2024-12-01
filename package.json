@@ -27,11 +27,13 @@
     "express": "^4.21.1",
     "express-handlebars": "^8.0.1",
     "express-session": "^1.18.1",
-    "handlebars": "^4.7.8",
-    "mysql2": "^3.11.5"
+    "handlebars": "^4.7.8"
   },
   "devDependencies": {
+    "chai": "^5.1.2",
     "drizzle-kit": "^0.28.1",
+    "mocha": "^10.8.2",
+    "mysql2": "^3.11.5",
     "nodemon": "^3.1.7"
   },
   "type": "module"
